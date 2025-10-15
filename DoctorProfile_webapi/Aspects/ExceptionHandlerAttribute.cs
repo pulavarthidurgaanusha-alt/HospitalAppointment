@@ -18,7 +18,7 @@ namespace HospitalAppointment.Aspects
                 DoctorNotFoundException => new NotFoundObjectResult(new { error = message }),
                 DoctorCreationException => new BadRequestObjectResult(new { error = message }),
                 DoctorUpdateException => new BadRequestObjectResult(new { error = message }),
-                DoctorDeletionException => new BadRequestObjectResult(new { error = message }),
+                //DoctorDeletionException => new BadRequestObjectResult(new { error = message }),
                 DoctorSearchException => new BadRequestObjectResult(new { error = message }),
 
                 // Location-related exceptions
