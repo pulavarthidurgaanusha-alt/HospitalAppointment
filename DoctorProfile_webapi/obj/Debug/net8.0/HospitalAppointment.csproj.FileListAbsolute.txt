@@ -285,3 +285,4 @@ C:\Users\2438912\source\repos\DoctorProfile_webapi\DoctorProfile_webapi\obj\Debu
 C:\Users\2438912\source\repos\DoctorProfile_webapi\DoctorProfile_webapi\obj\Debug\net8.0\HospitalAppointment.pdb
 C:\Users\2438912\source\repos\DoctorProfile_webapi\DoctorProfile_webapi\obj\Debug\net8.0\HospitalAppointment.genruntimeconfig.cache
 C:\Users\2438912\source\repos\DoctorProfile_webapi\DoctorProfile_webapi\obj\Debug\net8.0\ref\HospitalAppointment.dll
+C:\Users\2438912\source\repos\DoctorProfile_webapi\DoctorProfile_webapi\obj\Debug\net8.0\HospitalAppointment.sourcelink.json
