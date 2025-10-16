@@ -1,111 +1,70 @@
-﻿//using HospitalAppointment.Aspects;
-//using HospitalAppointment.Repository;
-//using HospitalAppointment.Service;
-//using HospitalAppointment.Services;
-////using Microsoft.Ajax.Utilities;
-//using Microsoft.EntityFrameworkCore;
-//using System.Text.Json;
-//using System.Text.Json.Serialization;
-
-//var builder = WebApplication.CreateBuilder(args);
-
-//// Configure DbContext
-//builder.Services.AddDbContext<Context>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("Appointment_BookingContext")
-//        ?? throw new InvalidOperationException("Connection string 'AppointmentContext' not found.")));
-
-//// Add controllers and JSON enum support
-//builder.Services.AddControllers()
-//    .AddJsonOptions(options =>
-//    {
-//        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-//        options.JsonSerializerOptions.WriteIndented = true;
-//    });
-
-//builder.Services.AddControllers(options =>
-//{
-//    options.Filters.Add<ExceptionHandlerAttribute>();
-//});
-
-//// Swagger
-//builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
-
-//// Register repositories and services
-//builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
-//builder.Services.AddScoped<IDoctorService, DoctorService>();
-//builder.Services.AddScoped<ILocationRepository, LocationRepository>();
-//builder.Services.AddScoped<ILocationService, LocationService>();
-//builder.Services.AddScoped<IAvailabilityRepository, AvailabilityRepository>();
-//builder.Services.AddScoped<IAvailabilityService, AvailabilityService>();
-
-//var app = builder.Build();
-
-//// Configure middleware
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
-//}
-//app.UseDeveloperExceptionPage();
-//app.UseHttpsRedirection();
-//app.UseAuthorization();
-//app.MapControllers();
-//app.Run();
-
-
-using HospitalAppointment.Aspects;
+﻿using HospitalAppointment.Aspects;
+//using HospitalMedicalHistory.Data;
+using HospitalAppointment.Repositories;
 using HospitalAppointment.Repository;
 using HospitalAppointment.Service;
 using HospitalAppointment.Services;
-//using Microsoft.Ajax.Utilities;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<Appointment_BookingContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Appointment_BookingContext") ?? throw new InvalidOperationException("Connection string 'HospitalAppointmentProContext' not found.")));
 
-builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
-builder.Services.AddScoped<IDoctorService, DoctorService>();
-builder.Services.AddScoped<ILocationRepository, LocationRepository>();
-builder.Services.AddScoped<ILocationService, LocationService>();
-builder.Services.AddScoped<IAvailabilityRepository, AvailabilityRepository>();
-builder.Services.AddScoped<IAvailabilityService, AvailabilityService>();
-builder.Services.AddScoped<ExceptionHandlerAttribute>();
-
-// Add services to the container.
-builder.Services.AddControllers(options =>
+namespace HospitalAppointment
 {
-    options.Filters.Add<ExceptionHandlerAttribute>();
-});
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddControllers();
-builder.Services.AddControllers(options =>
-{
-    options.Filters.Add<ExceptionHandlerAttribute>();
-})
-.AddJsonOptions(options =>
-{
-    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
-});
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+            // Configure DbContext
+            builder.Services.AddDbContext<Appointment_BookingContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("Appointment_BookingContext")
+                    ?? throw new InvalidOperationException("Connection string 'Appointment_BookingContext' not found.")));
 
-var app = builder.Build();
+            // Register repositories and services
+            // Register repositories and services
+            builder.Services.AddScoped<IDoctorRepository, DoctorRepository>(); 
+            builder.Services.AddScoped<IDoctorService, DoctorService>(); 
+            builder.Services.AddScoped<ILocationRepository, LocationRepository>(); 
+            builder.Services.AddScoped<ILocationService, LocationService>(); 
+            builder.Services.AddScoped<IAvailabilityRepository, AvailabilityRepository>(); 
+            builder.Services.AddScoped<IAvailabilityService, AvailabilityService>(); 
+            builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+            builder.Services.AddScoped<IPatientService, PatientService>();
+            builder.Services.AddScoped<IMedicalHistRepository, MedicalHistRepository>();
+            builder.Services.AddScoped<IMedicalHistService, MedicalHistService>();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+            // Register global exception handler attribute
+            builder.Services.AddScoped<ExceptionHandlerAttribute>();
+
+            // Add controllers with exception filter and JSON enum support
+            builder.Services.AddControllers(options =>
+            {
+                options.Filters.Add<ExceptionHandlerAttribute>();
+            })
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
+            });
+
+            // Swagger configuration
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
+
+            var app = builder.Build();
+
+            // Development-specific middleware
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseAuthorization();
+            app.MapControllers();
+            app.Run();
+        }
+    }
 }
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
