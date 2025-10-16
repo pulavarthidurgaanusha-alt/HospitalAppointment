@@ -574,3 +574,5 @@ C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\obj\Debug
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\obj\Debug\net8.0\HospitalAppointment.pdb
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\obj\Debug\net8.0\HospitalAppointment.genruntimeconfig.cache
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\obj\Debug\net8.0\ref\HospitalAppointment.dll
+C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\Antlr3.Runtime.dll
+C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\WebGrease.dll
