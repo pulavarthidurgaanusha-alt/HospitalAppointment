@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HospitalAppointment.Migrations
 {
     [DbContext(typeof(Appointment_BookingContext))]
-    partial class Appointment_BookingContextModelSnapshot : ModelSnapshot
+    partial class HospitalAppointmentContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
