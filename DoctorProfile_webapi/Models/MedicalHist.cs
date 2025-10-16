@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HospitalAppointment.Models
@@ -10,7 +11,7 @@ namespace HospitalAppointment.Models
 
         [ForeignKey("Patient")]
         public int PatientId { get; set; }
-       public Patient Patient { get; set; }
+        public Patient Patient { get; set; }
 
         [ForeignKey("Doctor")]
         public int DoctorId { get; set; }
