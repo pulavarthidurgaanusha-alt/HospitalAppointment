@@ -18,7 +18,7 @@ namespace HospitalAppointment.Models
 
         public string Address { get; set; }
 
-        public User User { get; set; }
+        //public User User { get; set; }
 
        
     }

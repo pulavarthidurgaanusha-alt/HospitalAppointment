@@ -20,6 +20,6 @@ namespace HospitalAppointment.Models
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
         public Doctor Doctor { get; set; }
-        public Patient Patient { get; set; }
+        //public Patient Patient { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HospitalAppointment.Migrations
 {
     /// <inheritdoc />
-    public partial class qwe : Migration
+    public partial class doctor : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -94,6 +94,36 @@ namespace HospitalAppointment.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Availability",
+                columns: table => new
+                {
+                    AvailabilityId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DoctorId = table.Column<int>(type: "int", nullable: false),
+                    LocationId = table.Column<int>(type: "int", nullable: false),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StartTime = table.Column<TimeSpan>(type: "time", nullable: false),
+                    EndTime = table.Column<TimeSpan>(type: "time", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Availability", x => x.AvailabilityId);
+                    table.ForeignKey(
+                        name: "FK_Availability_Doctors_DoctorId",
+                        column: x => x.DoctorId,
+                        principalTable: "Doctors",
+                        principalColumn: "doctor_id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Availability_Location_LocationId",
+                        column: x => x.LocationId,
+                        principalTable: "Location",
+                        principalColumn: "LocationId",
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Ratings",
                 columns: table => new
                 {
@@ -122,6 +152,16 @@ namespace HospitalAppointment.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Availability_DoctorId",
+                table: "Availability",
+                column: "DoctorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Availability_LocationId",
+                table: "Availability",
+                column: "LocationId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Location_DoctorId",
                 table: "Location",
                 column: "DoctorId");
@@ -146,16 +186,19 @@ namespace HospitalAppointment.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Location");
+                name: "Availability");
 
             migrationBuilder.DropTable(
                 name: "Ratings");
 
             migrationBuilder.DropTable(
-                name: "Doctors");
+                name: "Location");
 
             migrationBuilder.DropTable(
                 name: "Patient");
+
+            migrationBuilder.DropTable(
+                name: "Doctors");
 
             migrationBuilder.DropTable(
                 name: "User");

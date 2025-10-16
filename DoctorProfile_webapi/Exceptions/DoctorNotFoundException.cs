@@ -6,5 +6,8 @@ namespace HospitalAppointment.Exceptions
     {
         public DoctorNotFoundException(int id)
             : base($"Doctor with ID {id} was not found.") { }
+        //public DoctorNotFoundException(int doctorId)
+        //    : base($"Doctor with ID {doctorId} does not exist.") { }
     }
+    
 }

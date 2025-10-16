@@ -41,7 +41,7 @@ public class Doctor
 
     // Navigation property for related locations
     public ICollection<Location> Locations { get; set; }
-    public ICollection<Rating> Rating { get; set; }
+    //public ICollection<Rating> Rating { get; set; }
     public enum DoctorGender
     {
         Male,
