@@ -610,11 +610,10 @@
       },
       "AvailabilityStatus": {
         "enum": [
-          0,
-          1
+          "available",
+          "unavailable"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "Doctor": {
         "required": [
@@ -679,12 +678,11 @@
       },
       "DoctorGender": {
         "enum": [
-          0,
-          1,
-          2
+          "male",
+          "female",
+          "other"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "Location": {
         "type": "object",

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Z5tzvSR9z0U=",
+  "dgSpecHash": "So8mSfTD2Og=",
   "success": true,
   "projectFilePath": "C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\2438866\\.nuget\\packages\\antlr\\3.4.1.9004\\antlr.3.4.1.9004.nupkg.sha512",
     "C:\\Users\\2438866\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\2438866\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\2438866\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
@@ -169,17 +170,33 @@
     "C:\\Users\\2438866\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\2438866\\.nuget\\packages\\system.threading.tasks.dataflow\\7.0.0\\system.threading.tasks.dataflow.7.0.0.nupkg.sha512",
     "C:\\Users\\2438866\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\2438866\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
+    "C:\\Users\\2438866\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512",
+    "C:\\Users\\2438866\\.nuget\\packages\\webgrease\\1.6.0\\webgrease.1.6.0.nupkg.sha512"
   ],
   "logs": [
     {
-      "code": "Undefined",
+      "code": "NU1701",
       "level": "Warning",
-      "message": "Problem reading the cache file C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "message": "Package 'Antlr 3.4.1.9004' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "projectPath": "C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
       "warningLevel": 1,
       "filePath": "C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
-      "targetGraphs": []
+      "libraryId": "Antlr",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'WebGrease 1.6.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "projectPath": "C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
+      "libraryId": "WebGrease",
+      "targetGraphs": [
+        "net8.0"
+      ]
     }
   ]
 }
