@@ -21,4 +21,8 @@ public class Appointment_BookingContext : DbContext
 
     //    base.OnModelCreating(modelBuilder);
     //}
+    public DbSet<Availability> Availability { get; set; }
+    public DbSet<User> User { get; set; }
+    public DbSet<Patient> Patient { get; set; }
+    
 }

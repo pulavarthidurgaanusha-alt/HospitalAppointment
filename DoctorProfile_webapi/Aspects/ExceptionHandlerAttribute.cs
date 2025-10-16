@@ -25,6 +25,22 @@ namespace HospitalAppointment.Aspects
                 InvalidDoctorLocationException => new BadRequestObjectResult(new { error = message }),
                 LocationNotFoundException => new NotFoundObjectResult(new { error = message }),
 
+                // Availability-related exceptions
+                AvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+                AvailabilityNullException => new BadRequestObjectResult(new { error = message }),
+                InvalidAvailabilityTimeException => new BadRequestObjectResult(new { error = message }),
+                AvailabilityConflictException => new ConflictObjectResult(new { error = message }),
+
+                // Doctor & Location combined exceptions
+                DoctorAndLocationNotFoundException => new NotFoundObjectResult(new { error = message }),
+                DoctorAvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+                DoctorLocationAvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+
+                // Date-related exceptions
+                DateAvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+                DateDoctorAvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+                DateDoctorLocationAvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+
                 // Fallback for unhandled exceptions
                 _ => new ObjectResult(new { error = "An unexpected error occurred." })
                 {
