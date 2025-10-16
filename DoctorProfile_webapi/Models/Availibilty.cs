@@ -17,15 +17,14 @@ namespace HospitalAppointment.Models
 
         public DateTime Date { get; set; }
 
-        public DateTime StartTime { get; set; }
+        public TimeSpan StartTime { get; set; }
 
         public TimeSpan EndTime { get; set; }
 
         public AvailabilityStatus Status { get; set; } // available, unavailable
 
-        public Doctor Doctor { get; set; }
-        public Location Location { get; set; }
-
+        //public Doctor Doctor { get; set; }
+        //public Location Location { get; set; }
 
         public enum AvailabilityStatus
         {

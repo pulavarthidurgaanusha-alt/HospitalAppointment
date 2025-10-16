@@ -75,6 +75,41 @@ namespace HospitalAppointment.Migrations
                     b.ToTable("Doctors");
                 });
 
+            modelBuilder.Entity("HospitalAppointment.Models.Availability", b =>
+                {
+                    b.Property<int>("AvailabilityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AvailabilityId"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeSpan>("EndTime")
+                        .HasColumnType("time");
+
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
+
+                    b.Property<TimeSpan>("StartTime")
+                        .HasColumnType("time");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.HasKey("AvailabilityId");
+
+                    b.HasIndex("DoctorId");
+
+                    b.HasIndex("LocationId");
+
+                    b.ToTable("Availability");
+                });
+
             modelBuilder.Entity("HospitalAppointment.Models.Patient", b =>
                 {
                     b.Property<int>("PatientId")
@@ -198,6 +233,25 @@ namespace HospitalAppointment.Migrations
                     b.ToTable("Location");
                 });
 
+            modelBuilder.Entity("HospitalAppointment.Models.Availability", b =>
+                {
+                    b.HasOne("Doctor", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Location");
+                });
+
             modelBuilder.Entity("HospitalAppointment.Models.Patient", b =>
                 {
                     b.HasOne("HospitalAppointment.Models.User", "User")
@@ -212,7 +266,7 @@ namespace HospitalAppointment.Migrations
             modelBuilder.Entity("HospitalAppointment.Models.Rating", b =>
                 {
                     b.HasOne("Doctor", "Doctor")
-                        .WithMany()
+                        .WithMany("Rating")
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -240,6 +294,8 @@ namespace HospitalAppointment.Migrations
             modelBuilder.Entity("Doctor", b =>
                 {
                     b.Navigation("Locations");
+
+                    b.Navigation("Rating");
                 });
 #pragma warning restore 612, 618
         }
