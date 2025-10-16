@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2439021\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj": {}
+    "C:\\Users\\2438912\\source\\repos\\DoctorProfile_webapi\\DoctorProfile_webapi\\HospitalAppointment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2439021\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj": {
+    "C:\\Users\\2438912\\source\\repos\\DoctorProfile_webapi\\DoctorProfile_webapi\\HospitalAppointment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2439021\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
+        "projectUniqueName": "C:\\Users\\2438912\\source\\repos\\DoctorProfile_webapi\\DoctorProfile_webapi\\HospitalAppointment.csproj",
         "projectName": "HospitalAppointment",
-        "projectPath": "C:\\Users\\2439021\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
-        "packagesPath": "C:\\Users\\2439021\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2439021\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\obj\\",
+        "projectPath": "C:\\Users\\2438912\\source\\repos\\DoctorProfile_webapi\\DoctorProfile_webapi\\HospitalAppointment.csproj",
+        "packagesPath": "C:\\Users\\2438912\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\2438912\\source\\repos\\DoctorProfile_webapi\\DoctorProfile_webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\2439021\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\2438912\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
