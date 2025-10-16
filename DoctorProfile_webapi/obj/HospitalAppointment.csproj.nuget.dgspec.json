@@ -1,24 +1,7 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\2438912\\source\\repos\\DoctorProfile_webapi\\DoctorProfile_webapi\\HospitalAppointment.csproj": {}
-=======
-<<<<<<< HEAD
-    "C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
-        "projectName": "HospitalAppointment",
-        "projectPath": "C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
-        "packagesPath": "C:\\Users\\2438866\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2438866\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\obj\\",
-=======
-    "C:\\Users\\2439021\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj": {}
->>>>>>> da0c545894a51ea6d5802412071b7afe71a48c21
   },
   "projects": {
     "C:\\Users\\2438912\\source\\repos\\DoctorProfile_webapi\\DoctorProfile_webapi\\HospitalAppointment.csproj": {
@@ -26,30 +9,15 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\2438912\\source\\repos\\DoctorProfile_webapi\\DoctorProfile_webapi\\HospitalAppointment.csproj",
         "projectName": "HospitalAppointment",
-<<<<<<< HEAD
         "projectPath": "C:\\Users\\2438912\\source\\repos\\DoctorProfile_webapi\\DoctorProfile_webapi\\HospitalAppointment.csproj",
         "packagesPath": "C:\\Users\\2438912\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\2438912\\source\\repos\\DoctorProfile_webapi\\DoctorProfile_webapi\\obj\\",
-=======
-        "projectPath": "C:\\Users\\2439021\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
-        "packagesPath": "C:\\Users\\2439021\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2439021\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\obj\\",
->>>>>>> master
->>>>>>> da0c545894a51ea6d5802412071b7afe71a48c21
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\2438912\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-<<<<<<< HEAD
-          "C:\\Users\\2438866\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-          "C:\\Users\\2439021\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> master
->>>>>>> da0c545894a51ea6d5802412071b7afe71a48c21
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -58,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
