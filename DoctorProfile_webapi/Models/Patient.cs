@@ -15,6 +15,7 @@ namespace HospitalAppointment.Models
        // public PatientGender Gender { get; set; } // Male, Female, Other
 
         public DateTime Dob { get; set; }
+        public string Name { get; set; }
 
         public string Address { get; set; }
 

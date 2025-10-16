@@ -11,26 +11,30 @@ namespace HospitalAppointment.Models
 
         [ForeignKey("Patient")]
         public int PatientId { get; set; }
+        // public  Patient Patient { get; set; }
 
         [ForeignKey("Doctor")]
         public int DoctorId { get; set; }
+        //public required Doctor Doctor { get; set; }
 
         [ForeignKey("Availability")]
         public int AvailabilityId { get; set; }
+        //public Availability Availability { get; set; }
 
+        [Required]
+        [DataType(DataType.Date)]
         public DateTime AppointmentDate { get; set; }
 
+        [Required]
         public TimeSpan AppointmentTime { get; set; }
 
         [Required]
-        public AppointmentStatus Status { get; set; } // booked, completed, cancelled_by_patient, cancelled_by_doctor
+        public AppointmentStatus Status { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        public Doctor Doctor { get; set; }
-        public Patient Patient { get; set; }
-        public Availability Availability { get; set; }
-
+        [MaxLength(255)]
+        public string Concern { get; set; } // Optional field for reason to visit
 
         public enum AppointmentStatus
         {
@@ -39,6 +43,5 @@ namespace HospitalAppointment.Models
             CancelledByPatient,
             CancelledByDoctor
         }
-
     }
 }

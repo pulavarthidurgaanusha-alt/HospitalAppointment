@@ -1,7 +1,8 @@
-﻿using Appointment_Booking.Services;
+﻿//using Appointment_Booking.Services;
+using HospitalAppointment.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Appointment_Booking.Controllers
+namespace HospitalAppointment.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

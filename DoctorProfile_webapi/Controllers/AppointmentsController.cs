@@ -1,12 +1,15 @@
-﻿using Appointment_Booking.Aspects;
-using Appointment_Booking.Data;
-using Appointment_Booking.Exceptions;
-using Appointment_Booking.Models;
-using Appointment_Booking.Services;
+﻿//using Appointment_Booking.Aspects;
+//using Appointment_Booking.Data;
+//using Appointment_Booking.Exceptions;
+//using Appointment_Booking.Models;
+//using Appointment_Booking.Services;
+using HospitalAppointment.Aspects;
+using HospitalAppointment.Models;
+using HospitalAppointment.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace Appointment_Booking.Controllers
+namespace HospitalAppointment.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

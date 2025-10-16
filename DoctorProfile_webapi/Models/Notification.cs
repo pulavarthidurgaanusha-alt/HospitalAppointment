@@ -11,11 +11,14 @@ namespace HospitalAppointment.Models
 
         [ForeignKey("User")]
         public int UserId { get; set; }
+        //public required User User { get; set; }
 
+        [Required]
+        [MaxLength(255)]
         public string Message { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        public User User { get; set; }
+        public bool Read { get; set; } = false; // Default to unread
     }
 }

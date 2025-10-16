@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\2438909\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj": {}
+    "C:\\Users\\2438909\\source\\repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\2438909\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj": {
+    "C:\\Users\\2438909\\source\\repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\2438909\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
+        "projectUniqueName": "C:\\Users\\2438909\\source\\repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
         "projectName": "HospitalAppointment",
-        "projectPath": "C:\\Users\\2438909\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
+        "projectPath": "C:\\Users\\2438909\\source\\repos\\HospitalAppointment\\DoctorProfile_webapi\\HospitalAppointment.csproj",
         "packagesPath": "C:\\Users\\2438909\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\2438909\\Source\\Repos\\HospitalAppointment\\DoctorProfile_webapi\\obj\\",
+        "outputPath": "C:\\Users\\2438909\\source\\repos\\HospitalAppointment\\DoctorProfile_webapi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,6 +51,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.9, )"
