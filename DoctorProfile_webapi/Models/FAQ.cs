@@ -16,9 +16,9 @@ namespace HospitalAppointment.Models
         
         public string Answer { get; set; }
 
-        [Required]
-        [MaxLength(255)]
-        public string Category { get; set; }
+        //[Required]
+        //[MaxLength(255)]
+        //public string Category { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
     }

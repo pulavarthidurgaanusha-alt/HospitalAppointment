@@ -116,6 +116,12 @@ namespace HospitalAppointment.Controllers
                 return StatusCode(500, new { error = "An unexpected error occurred." });
             }
         }
+        [HttpGet("ratings-by-speciality")]
+        public async Task<IActionResult> GetDoctorsBySpeciality([FromQuery] string speciality)
+        {
+            var result = await _service.GetDoctorsBySpecialityRatingAsync(speciality);
+            return Ok(result);
+        }
 
     }
 }

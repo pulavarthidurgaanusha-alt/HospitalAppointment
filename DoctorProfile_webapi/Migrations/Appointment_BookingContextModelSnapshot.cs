@@ -75,20 +75,43 @@
 //                    b.ToTable("Doctors");
 //                });
 
+            modelBuilder.Entity("HospitalAppointment.Models.Appointment", b =>
+                {
+                    b.Property<int>("AppointmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 //            modelBuilder.Entity("HospitalAppointment.Models.Availability", b =>
 //                {
 //                    b.Property<int>("AvailabilityId")
 //                        .ValueGeneratedOnAdd()
 //                        .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppointmentId"));
 //                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AvailabilityId"));
 
+                    b.Property<DateTime>("AppointmentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<TimeSpan>("AppointmentTime")
+                        .HasColumnType("time");
+
+                    b.Property<int>("AvailabilityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Concern")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 //                    b.Property<DateTime>("Date")
 //                        .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
 //                    b.Property<int>("DoctorId")
 //                        .HasColumnType("int");
 
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
 //                    b.Property<TimeSpan>("EndTime")
 //                        .HasColumnType("time");
 
@@ -179,49 +202,110 @@
 
 //                    b.HasKey("PatientId");
 
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
 //                    b.HasIndex("UserId");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 //                    b.ToTable("Patient");
 //                });
 
+                    b.HasKey("AppointmentId");
+
+                    b.ToTable("Appointment");
+                });
 //            modelBuilder.Entity("HospitalAppointment.Models.Rating", b =>
 //                {
 //                    b.Property<int>("RatingId")
 //                        .ValueGeneratedOnAdd()
 //                        .HasColumnType("int");
 
+            modelBuilder.Entity("HospitalAppointment.Models.Availability", b =>
+                {
+                    b.Property<int>("AvailabilityId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 //                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatingId"));
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AvailabilityId"));
 //                    b.Property<DateTime>("CreatedAt")
 //                        .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 //                    b.Property<int>("DoctorId")
 //                        .HasColumnType("int");
 
 //                    b.Property<int>("PatientId")
 //                        .HasColumnType("int");
 
+                    b.Property<TimeSpan>("EndTime")
+                        .HasColumnType("time");
+
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
 //                    b.Property<int>("Value")
 //                        .HasColumnType("int");
 
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 //                    b.HasKey("RatingId");
 
+                    b.HasKey("AvailabilityId");
 //                    b.HasIndex("DoctorId");
 
 //                    b.ToTable("Ratings");
 //                });
 
+                    b.HasIndex("LocationId");
+
+                    b.ToTable("Availability");
+                });
+
+            modelBuilder.Entity("HospitalAppointment.Models.FAQ", b =>
+                {
+                    b.Property<int>("FaqId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FaqId"));
+
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Question")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("FaqId");
 //            modelBuilder.Entity("HospitalAppointment.Models.User", b =>
 //                {
 //                    b.Property<int>("UserId")
 //                        .ValueGeneratedOnAdd()
 //                        .HasColumnType("int");
 
+                    b.ToTable("FAQs");
+                });
 //                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
+            modelBuilder.Entity("HospitalAppointment.Models.Notification", b =>
+                {
+                    b.Property<int>("NotificationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 //                    b.Property<DateTime>("CreatedAt")
 //                        .HasColumnType("datetime2");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NotificationId"));
 //                    b.Property<string>("Email")
 //                        .IsRequired()
 //                        .HasColumnType("nvarchar(max)");
@@ -230,24 +314,96 @@
 //                        .IsRequired()
 //                        .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool>("Read")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("NotificationId");
+
+                    b.ToTable("Notification");
+                });
+
+            modelBuilder.Entity("HospitalAppointment.Models.Patient", b =>
+                {
+                    b.Property<int>("PatientId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PatientId"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 //                    b.Property<string>("Phone")
 //                        .IsRequired()
 //                        .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("Dob")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 //                    b.Property<int>("Role")
 //                        .HasColumnType("int");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PatientId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Patients");
+                });
+
+            modelBuilder.Entity("HospitalAppointment.Models.Rating", b =>
+                {
+                    b.Property<int>("RatingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatingId"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Feedback")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 //                    b.HasKey("UserId");
 
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
 //                    b.ToTable("User");
 //                });
 
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
 //            modelBuilder.Entity("Location", b =>
 //                {
 //                    b.Property<int>("LocationId")
 //                        .ValueGeneratedOnAdd()
 //                        .HasColumnType("int");
 
+                    b.HasKey("RatingId");
+
+                    b.HasIndex("DoctorId");
+
+                    b.HasIndex("PatientId");
+
+                    b.ToTable("Rating");
+                });
 //                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LocationId"));
 
 //                    b.Property<string>("Address")
@@ -294,11 +450,70 @@
 //                        .OnDelete(DeleteBehavior.Restrict)
 //                        .IsRequired();
 
+            modelBuilder.Entity("User", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("HospitalAppointment.Models.Availability", b =>
+                {
+                    b.HasOne("Doctor", "Doctor")
+                        .WithMany()
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Location");
+                });
+
+            modelBuilder.Entity("HospitalAppointment.Models.Patient", b =>
+                {
+                    b.HasOne("User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 //                    b.Navigation("Doctor");
 
 //                    b.Navigation("Patient");
 //                });
 
+            modelBuilder.Entity("HospitalAppointment.Models.Rating", b =>
+                {
+                    b.HasOne("Doctor", "Doctor")
+                        .WithMany("Rating")
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 //            modelBuilder.Entity("HospitalAppointment.Models.Patient", b =>
 //                {
 //                    b.HasOne("HospitalAppointment.Models.User", "User")
@@ -330,6 +545,16 @@
 //                        .IsRequired();
 //                });
 
+            modelBuilder.Entity("Doctor", b =>
+                {
+                    b.Navigation("Locations");
+
+                    b.Navigation("Rating");
+                });
+#pragma warning restore 612, 618
+        }
+    }
+}
 //            modelBuilder.Entity("Doctor", b =>
 //                {
 //                    b.Navigation("Locations");

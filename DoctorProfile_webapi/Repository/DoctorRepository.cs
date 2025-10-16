@@ -1,5 +1,7 @@
 ﻿using HospitalAppointment.Exceptions;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace HospitalAppointment.Repository
 {
@@ -79,6 +81,37 @@ namespace HospitalAppointment.Repository
                 .ToList<object>();
 
             return doctors;
+        }
+             public async Task<List<object>> GetDoctorsBySpecialityRatingAsync(string speciality)
+        {
+            var connection = _context.Database.GetDbConnection();
+            await connection.OpenAsync();
+
+            using var command = connection.CreateCommand();
+            command.CommandText = "GetDoctorsBySpecialityRating";
+            command.CommandType = CommandType.StoredProcedure;
+
+            var param = new SqlParameter("@Specialization", speciality);
+            command.Parameters.Add(param);
+
+            var result = new List<object>();
+
+            using var reader = await command.ExecuteReaderAsync();
+            while (await reader.ReadAsync())
+            {
+                var doctorName = reader["DoctorName"].ToString();
+                var specialization = reader["Specialization"].ToString();
+                var averageRating = Convert.ToDouble(reader["AverageRating"]);
+
+                result.Add(new
+                {
+                    DoctorName = doctorName,
+                    Specialization = specialization,
+                    AverageRating = averageRating
+                });
+            }
+
+            return result;
         }
     }
     }

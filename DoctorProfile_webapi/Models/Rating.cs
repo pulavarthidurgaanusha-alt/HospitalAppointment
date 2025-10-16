@@ -16,6 +16,7 @@ namespace HospitalAppointment.Models
         public int PatientId { get; set; }
 
         public int Value { get; set; }
+        public string Feedback { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 

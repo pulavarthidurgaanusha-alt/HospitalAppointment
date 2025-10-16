@@ -12,5 +12,7 @@ namespace HospitalAppointment.Services
         void UpdateDoctor(Doctor doctor);
         void DeleteDoctor(int id);
         IEnumerable<object> SearchDoctorsByLocationAndSpecialty(string locationName, string specialty);
+      
+        Task<List<object>> GetDoctorsBySpecialityRatingAsync(string speciality);
     }
 }
