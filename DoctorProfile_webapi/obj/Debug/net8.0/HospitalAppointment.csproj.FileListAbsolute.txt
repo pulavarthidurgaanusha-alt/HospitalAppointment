@@ -294,6 +294,7 @@ C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\HospitalAppointment.runtimeconfig.json
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\HospitalAppointment.dll
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\HospitalAppointment.pdb
+C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\Antlr3.Runtime.dll
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\Humanizer.dll
@@ -386,6 +387,7 @@ C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\WebGrease.dll
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\af\Humanizer.resources.dll
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\ar\Humanizer.resources.dll
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\az\Humanizer.resources.dll
@@ -574,5 +576,3 @@ C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\obj\Debug
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\obj\Debug\net8.0\HospitalAppointment.pdb
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\obj\Debug\net8.0\HospitalAppointment.genruntimeconfig.cache
 C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\obj\Debug\net8.0\ref\HospitalAppointment.dll
-C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\Antlr3.Runtime.dll
-C:\Users\2438866\Source\Repos\HospitalAppointment\DoctorProfile_webapi\bin\Debug\net8.0\WebGrease.dll
