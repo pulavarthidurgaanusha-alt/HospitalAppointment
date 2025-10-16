@@ -13,29 +13,48 @@ using System.Text.Json.Serialization;
 //using webapi.Repository;
 //using webapi.Services;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Configure DbContext
-builder.Services.AddDbContext<Appointment_BookingContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Appointment_BookingContext")
-        ?? throw new InvalidOperationException("Connection string 'Appointment_BookingContext' not found.")));
-
-// Add controllers and JSON enum support
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-        options.JsonSerializerOptions.WriteIndented = true;
-    });
-
-builder.Services.AddControllers(options =>
+namespace HospitalAppointment
 {
-    options.Filters.Add<ExceptionHandlerAttribute>();
-});
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
 
-// Swagger
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+            // Configure DbContext
+            builder.Services.AddDbContext<Appointment_BookingContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("Appointment_BookingContext")
+                    ?? throw new InvalidOperationException("Connection string 'Appointment_BookingContext' not found.")));
+
+            // Register repositories and services
+            // Register repositories and services
+            builder.Services.AddScoped<IDoctorRepository, DoctorRepository>(); 
+            builder.Services.AddScoped<IDoctorService, DoctorService>(); 
+            builder.Services.AddScoped<ILocationRepository, LocationRepository>(); 
+            builder.Services.AddScoped<ILocationService, LocationService>(); 
+            builder.Services.AddScoped<IAvailabilityRepository, AvailabilityRepository>(); 
+            builder.Services.AddScoped<IAvailabilityService, AvailabilityService>(); 
+            builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+            builder.Services.AddScoped<IPatientService, PatientService>();
+            builder.Services.AddScoped<IMedicalHistRepository, MedicalHistRepository>();
+            builder.Services.AddScoped<IMedicalHistService, MedicalHistService>();
+
+            // Register global exception handler attribute
+            builder.Services.AddScoped<ExceptionHandlerAttribute>();
+
+            // Add controllers with exception filter and JSON enum support
+            builder.Services.AddControllers(options =>
+            {
+                options.Filters.Add<ExceptionHandlerAttribute>();
+            })
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter(JsonNamingPolicy.CamelCase));
+            });
+
+            // Swagger configuration
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
 // Register repositories and services
 builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();

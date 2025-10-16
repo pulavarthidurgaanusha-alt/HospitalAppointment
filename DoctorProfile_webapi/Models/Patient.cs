@@ -11,16 +11,33 @@ namespace HospitalAppointment.Models
 
         [ForeignKey("User")]
         public int UserId { get; set; }
+        public User User { get; set; }
 
-       // public PatientGender Gender { get; set; } // Male, Female, Other
+        [Required]
+        [MinLength(3)]
+        [MaxLength(100)]
+        public string Name { get; set; }
+
+        [StringLength(10)]
+        public string Phone { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        [Required]
+        public PatientGender Gender { get; set; }
 
         public DateTime Dob { get; set; }
         public string Name { get; set; }
 
+        [MaxLength(255)]
         public string Address { get; set; }
 
-        public User User { get; set; }
+        public enum PatientGender
+        {
+            Male,
+            Female,
+            Other
+        }
 
-       
     }
 }

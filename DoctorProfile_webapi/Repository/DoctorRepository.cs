@@ -62,7 +62,7 @@ namespace HospitalAppointment.Repository
 
             var doctors = _context.Doctors
                 .Include(d => d.Locations)
-                .Include(d => d.Rating)
+                //.Include(d => d.Rating)
                 .Where(d =>
                     d.Specialization.ToLower() == normalizedSpecialty &&
                     d.Locations.Any(l => l.City.ToLower() == normalizedLocation))

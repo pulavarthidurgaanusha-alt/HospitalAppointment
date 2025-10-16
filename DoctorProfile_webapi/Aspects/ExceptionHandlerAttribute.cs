@@ -71,6 +71,36 @@ namespace HospitalAppointment.Aspects
             else if (exceptionType == typeof(NotificationCreationFailedException))
             {
                 context.Result = new ObjectResult(message)
+                // Availability-related exceptions
+                AvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+                AvailabilityNullException => new BadRequestObjectResult(new { error = message }),
+                InvalidAvailabilityTimeException => new BadRequestObjectResult(new { error = message }),
+                AvailabilityConflictException => new ConflictObjectResult(new { error = message }),
+
+                // Doctor & Location combined exceptions
+                DoctorAndLocationNotFoundException => new NotFoundObjectResult(new { error = message }),
+                DoctorAvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+                DoctorLocationAvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+
+                // Date-related exceptions
+                DateAvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+                DateDoctorAvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+                DateDoctorLocationAvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+
+                // Middleware exceptions
+                System.UnauthorizedAccessException => new UnauthorizedObjectResult(new { error = message }),
+                ProfileNotFoundException => new NotFoundObjectResult(new { error = message }),
+                ValidationException => new BadRequestObjectResult(new { error = message }),
+                MissingDataException => new ObjectResult(new { error = message }) { StatusCode = 206 },
+                NavigationException => new ObjectResult(new { error = message }) { StatusCode = 502 },
+
+                // Medical history exceptions
+                NotFoundException => new NotFoundObjectResult(new { error = message }),
+                MedicalHistoryCreationException => new BadRequestObjectResult(new { error = message }),
+                DoctorAuthorizationException => new ForbidResult(),
+
+                // Fallback for unhandled exceptions
+                _ => new ObjectResult(new { error = "An unexpected error occurred." })
                 {
                     StatusCode = 500
                 };
