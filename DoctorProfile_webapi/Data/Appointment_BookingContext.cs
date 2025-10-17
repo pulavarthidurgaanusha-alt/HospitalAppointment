@@ -10,21 +10,24 @@ public class Appointment_BookingContext : DbContext
 
     public DbSet<Doctor> Doctors { get; set; }
     public DbSet<Location> Location { get; set; } = default!;
-    public DbSet<Rating> Ratings { get; set; }
+    public DbSet<Rating> Rating { get; set; }
+    public DbSet<FAQ> FAQs { get; set; }
+    public DbSet<User> User { get; set; }
+    public DbSet<Appointment> Appointment { get; set; }
+    public DbSet<Notification> Notification { get; set; }
+    public DbSet<Availability> Availability { get; set; }
+    public DbSet<Patient> Patients { get; set; }
 
     //protected override void OnModelCreating(ModelBuilder modelBuilder)
     //{
-    //    modelBuilder.Entity<Doctor>()
-    //        .HasMany(d => d.Rating)
-    //        .WithOne(r => r.Doctor)
-    //        .HasForeignKey(r => r.DoctorId);
+    //    {
 
-    //    base.OnModelCreating(modelBuilder);
+    //        modelBuilder.Entity<Availability>()
+    //        .HasOne(a => a.Location)
+    //        .WithMany(l => l.availability)
+    //        .HasForeignKey(a => a.LocationId)
+    //        .OnDelete(DeleteBehavior.Restrict); 
+    //    }
     //}
-    public DbSet<Availability> Availability { get; set; }
-    public DbSet<User> User { get; set; }
-    public DbSet<Patient> Patient { get; set; }
-
-    public DbSet<MedicalHist> MedicalHist { get; set; }
-    
 }
+    

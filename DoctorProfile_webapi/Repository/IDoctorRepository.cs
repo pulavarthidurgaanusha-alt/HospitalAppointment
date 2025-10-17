@@ -13,5 +13,6 @@ namespace HospitalAppointment.Repository
         void DeleteDoctor(int id);
         bool ExistsByName(string name);
         IEnumerable<object> SearchDoctorsByLocationAndSpecialty(string locationName, string specialty);
+        Task<List<object>> GetDoctorsBySpecialityRatingAsync(string speciality);
     }
 }

@@ -80,5 +80,10 @@ namespace HospitalAppointment.Services
 
             return doctors;
         }
+
+        public async Task<List<object>> GetDoctorsBySpecialityRatingAsync(string speciality)
+        {
+            return await _repo.GetDoctorsBySpecialityRatingAsync(speciality);
+        }
     }
 }
