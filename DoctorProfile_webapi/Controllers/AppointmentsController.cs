@@ -7,7 +7,7 @@ using HospitalAppointment.Aspects;
 using HospitalAppointment.Models;
 using HospitalAppointment.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore;
 
 namespace HospitalAppointment.Controllers
 {

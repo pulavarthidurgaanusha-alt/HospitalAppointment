@@ -70,9 +70,9 @@ namespace HospitalAppointment.Aspects
             }
             else if (exceptionType == typeof(NotificationCreationFailedException))
             {
-                context.Result = new ObjectResult(message)
-                // Availability-related exceptions
-                AvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
+                    context.Result = new ObjectResult(message);
+                    // Availability-related exceptions
+                    AvailabilityNotFoundException => new NotFoundObjectResult(new { error = message }),
                 AvailabilityNullException => new BadRequestObjectResult(new { error = message }),
                 InvalidAvailabilityTimeException => new BadRequestObjectResult(new { error = message }),
                 AvailabilityConflictException => new ConflictObjectResult(new { error = message }),
@@ -100,20 +100,21 @@ namespace HospitalAppointment.Aspects
                 DoctorAuthorizationException => new ForbidResult(),
 
                 // Fallback for unhandled exceptions
-                _ => new ObjectResult(new { error = "An unexpected error occurred." })
+                 _ => new ObjectResult(new { error = "An unexpected error occurred." })
+                 {
+                     StatusCode = 500
+                 };
+                }
+                else
                 {
-                    StatusCode = 500
-                };
-            }
-            else
-            {
-                context.Result = new ObjectResult("An unexpected error occurred.")
-                {
-                    StatusCode = 500
-                };
-            }
+                    context.Result = new ObjectResult("An unexpected error occurred.")
+                    {
+                        StatusCode = 500
+                    };
+                }
 
-            context.ExceptionHandled = true;
+
+                context.ExceptionHandled = true;
     }
       
 
@@ -145,7 +146,7 @@ namespace HospitalAppointment.Aspects
                 context.Result = result;
 
             }
-            else if (exceptionType == typeof(NotFoundException))
+            else if (exceptionType == typeof(Exceptions.NotFoundException))
             {
                 var result = new NotFoundObjectResult(message);
 
@@ -170,6 +171,7 @@ namespace HospitalAppointment.Aspects
         }
 
         // Fallback for unhandled exceptions
+
         
     }
 }

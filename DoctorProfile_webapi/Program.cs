@@ -1,11 +1,14 @@
 ﻿using HospitalAppointment.Aspects;
 using HospitalAppointment.Auth;
+using HospitalAppointment.Repositories;
 using HospitalAppointment.Repository;
 using HospitalAppointment.Service;
 using HospitalAppointment.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+
 using System.Text;
 using System.Text.Json.Serialization;
 //using webapi.IRepository;

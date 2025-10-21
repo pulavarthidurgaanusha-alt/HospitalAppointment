@@ -1,5 +1,9 @@
 ﻿using HospitalAppointment.Repository;
 using System;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 //using webapi.Data;
 
 //using webapi.Models;
